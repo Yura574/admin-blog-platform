@@ -1,0 +1,93 @@
+@import "../../../../style/color";
+
+//common
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+//common
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    color: $mainColor;
+    padding: 29px 0 7px 0;
+    border-bottom: 1px solid $light-gray;
+}
+
+//common
+.searchField {
+    display: flex;
+    margin-top: 23px;
+}
+
+.select {
+    min-width: 256px;
+    margin: 0 64px 0 12px;
+}
+
+.anticon {
+    color: rgba(173, 171, 172, 1);
+}
+
+.imgWrapper {
+    width: 156px;
+    height: 156px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid $light-gray;
+
+}
+
+.img {
+    //display: flex;
+
+
+}
+
+.blogsWrapper{
+margin-top: 24px;
+}
+
+.blogWrapper {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid $light-gray;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+}
+
+.blogTitle {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 133%;
+    color: $mainColor;
+}
+
+.website {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 175%;
+    color: $gray;
+}
+
+.description {
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 171%;
+    color: $mainColor;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}

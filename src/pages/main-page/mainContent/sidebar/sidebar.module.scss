@@ -1,0 +1,26 @@
+@import "../../../../style/color.scss";
+
+.layout{
+    display: flex;
+    flex-direction: column;
+    margin: 43px 0 0 64px;
+    width: 252px;
+}
+
+.navlink{
+    display: flex;
+    margin-top: 24px;
+    & div{
+        margin-left: 12px;
+    }
+
+
+
+}
+.activeNavlink {
+    color: $activeColor;
+    border-right: 1px solid $activeColor;
+    & svg {
+        fill: currentColor;
+    }
+}

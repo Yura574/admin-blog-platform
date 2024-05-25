@@ -1,0 +1,63 @@
+@import "../../../../../style/color";
+
+
+.mainImgWrapper{
+    width: 100%;
+    height: 312px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img{
+        width: 84px;
+        height: 84px;
+    }
+}
+
+.blogDescription{
+    margin-top: 28px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid $light-gray;
+}
+
+.name{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 109%;
+    text-align: center;
+    color: $mainColor;
+}
+
+.createdAt{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: 0.02em;
+    color: $text-gray;
+}
+.websiteUrl{
+    margin-top: 3px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+    color: #737067;
+    & a{
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #3677f7;
+    }
+}
+.description{
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+    color: $mainColor;
+}
+.buttonWrapper{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    & svg{
+        margin-left: 8px;
+    }
+}
