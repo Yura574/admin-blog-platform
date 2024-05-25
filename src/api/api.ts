@@ -2,7 +2,7 @@ import axios from "axios";
 import {GetBlogsParamsType, GetPostsParamsType} from "./apiTypes.ts";
 
 
-const baseURL = ' https://03125416ee7ab8067f79b3f0a9539c75.serveo.net'
+const baseURL = 'https://821173fd3b21e4a2a24cab54c3ed1efe.serveo.net'
 
 const instance = axios.create({
     baseURL,

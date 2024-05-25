@@ -1,0 +1,16 @@
+@import "../../../../style/color";
+
+
+.mainBreadcrumb{
+    color: $mainColor;
+}
+.breadcrumb {
+    color: rgba(0,0,0,0.1);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: 0.2em;
+    & a{
+        color: rgba(0,0,0,0.3);
+    }
+}

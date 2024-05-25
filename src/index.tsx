@@ -13,6 +13,7 @@ import {Blogs} from "@pages/main-page/mainContent/blogs/blogs.tsx";
 import {Posts} from "@pages/main-page/mainContent/posts/posts.tsx";
 import {PostId} from "@pages/main-page/mainContent/posts/postId/postId.tsx";
 import {BlogId} from "@pages/main-page/mainContent/blogs/blogId/blogId.tsx";
+import {AddBlog} from "@pages/main-page/mainContent/blogs/addBlog/addBlog.tsx";
 
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
@@ -24,6 +25,7 @@ root.render(
                 <Routes>
                     <Route path='/' element={<MainPage/>}>
                         <Route path={'/blogs'} element={<Blogs/>}/>
+                        <Route path={'/blogs/add'} element={<AddBlog/>}/>
                         <Route path={'/blogs/:id'} element={<BlogId/>}/>
                         <Route path={'/posts'} element={<Posts/>}/>
                         <Route path={'/posts/:id'} element={<PostId/>}/>
