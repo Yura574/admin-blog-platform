@@ -3,7 +3,7 @@ import {AddBlogDataType, GetBlogsParamsType, GetPostsParamsType} from "./apiType
 import { Buffer } from 'buffer'
 
 
-const baseURL = 'https://dd9d3e83759f0b241d44a81a15a2babf.serveo.net'
+const baseURL = 'https://2e1d103e065b08d1a33aad7bcf75b66d.serveo.net'
 
 const user = 'admin';
 const password = 'qwerty';
@@ -40,6 +40,9 @@ export const blogsApi = {
     addBlog: (data: AddBlogDataType) => {
         // const {websiteUrl, name, description} = data
         return instance.post('/blogs', data)
+    },
+    deleteBlog: (id: string)=> {
+        return instance.delete(`/blogs/${id}`)
     }
 }
 

@@ -18,7 +18,8 @@ export const store = configureStore({
         common: commonReducer,
         router: routerReducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(routerMiddleware),
+    middleware:
+        (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}).concat(routerMiddleware),
 });
 
 export const history = createReduxHistory(store);

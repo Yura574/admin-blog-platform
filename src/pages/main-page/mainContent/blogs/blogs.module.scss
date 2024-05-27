@@ -40,7 +40,16 @@
     align-items: center;
     border-radius: 50%;
     border: 1px solid $light-gray;
+    flex: 0 0 auto;
+}
 
+.blogDescriptionWrapper {
+    width: 100%;
+}
+
+.blogTitleWrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 .img {
@@ -93,10 +102,54 @@
     margin-top: 48px;
 }
 
-.button {
+.addBlogWrapper {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttonPrimary {
     background: $buttonActive;
     color: #fcfbfb;
     border-radius: 2px;
+    font-weight: 600;
     padding: 8px 36px;
     box-shadow: 0 4px 18px 0 rgba(248, 52, 107, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+}
+.buttonSecondary {
+    color: $buttonActive;
+    border-radius: 2px;
+    font-weight: 600;
+    padding: 8px 36px;
+    border: 1px solid $buttonActive;
+}
+
+.dropdownWrapper {
+    display: flex;
+    & img {
+        margin-right: 12px;
+    }
+}
+
+.wrapButtonsModal {
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+        width: 124px;
+        padding: 8px 0;
+    }
+}
+
+.titleModal {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    color: $text-gray;
+    padding-bottom: 18px;
+    border-bottom: 1px solid $light-gray;
+}
+
+.bodyModal {
+    padding: 30px 0 42px 0;
 }
