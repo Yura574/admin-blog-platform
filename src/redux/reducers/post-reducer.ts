@@ -35,9 +35,10 @@ export const getPostsThunk = createAsyncThunk('posts/getPosts', async (_, {dispa
         pageSize: 10,
         pageNumber: 1,
         sortBy: 'createdAt',
-        sortDirection: 'asc',
+        sortDirection: 'desc',
     }
     const posts = await postsApi.getAllPosts(params)
+    console.log(posts)
     dispatch(setPosts(posts.data.items))
 })
 

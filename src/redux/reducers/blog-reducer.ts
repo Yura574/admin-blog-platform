@@ -12,7 +12,7 @@ export const getBlogsThunk = createAsyncThunk('blogs/getBlogs', async (_, {dispa
         pageSize: 10,
         pageNumber: 1,
         sortBy: 'createdAt',
-        sortDirection: 'asc',
+        sortDirection: 'desc',
     }
     const blogs = await blogsApi.getAllBlogs(params)
     dispatch(setBlogs(blogs.data.items))
