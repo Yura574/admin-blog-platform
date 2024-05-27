@@ -10,12 +10,18 @@ import TextArea from "antd/es/input/TextArea";
 import {FloatLabel} from "@pages/main-page/mainContent/components/floatLabel/floatLabel.tsx";
 import {useState} from "react";
 import style from './addBlog.module.scss'
+import {addBlog} from "@redux/reducers/blog-reducer.ts";
+import {useAppDispatch} from "@hooks/typed-react-redux-hooks.ts";
 
 
 export const AddBlog = () => {
-    const [blogName, setBlogName] = useState('')
-    const [website, setWebsite] = useState('')
+    const dispatch = useAppDispatch()
+    const [name, setName] = useState('')
+    const [websiteUrl, setWebsiteUrl] = useState('')
     const [description, setDescription] = useState('')
+    const addBlogButton = () => {
+        dispatch(addBlog({name, websiteUrl, description}))
+    }
     return (
         <div>
             <Breadcrumbs title={'Blogs'}/>
@@ -24,20 +30,20 @@ export const AddBlog = () => {
                 <img src={notImg} alt={'img'}/>
             </div>
             <div>
-                <FloatLabel label={'Blog name'} value={blogName}>
+                <FloatLabel label={'Blog name'} value={name}>
                     <Input
                         className={blogStyle.input}
-                        value={blogName}
-                        onChange={e => setBlogName(e.target.value)}
+                        value={name}
+                        onChange={e => setName(e.target.value)}
                     />
                 </FloatLabel>
             </div>
             <div>
-                <FloatLabel label={'Website'} value={website}>
+                <FloatLabel label={'Website'} value={websiteUrl}>
                     <Input
                         className={blogStyle.input}
-                        value={website}
-                        onChange={e => setWebsite(e.target.value)}
+                        value={websiteUrl}
+                        onChange={e => setWebsiteUrl(e.target.value)}
                     />
                 </FloatLabel>
             </div>
@@ -50,9 +56,13 @@ export const AddBlog = () => {
                 </FloatLabel>
             </div>
             <div className={style.buttonWrapper}>
-                <button className={blogsStyle.button}>Add blog</button>
+                <button
+                    className={blogsStyle.button}
+                    onClick={addBlogButton}
+                >
+                    Add blog
+                </button>
             </div>
-
 
 
         </div>

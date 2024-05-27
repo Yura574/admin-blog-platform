@@ -1,8 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {setIsPending} from "@redux/reducers/common-reducer.ts";
 import {blogsApi} from "../../api/api.ts";
-import {GetBlogsParamsType} from "../../api/apiTypes.ts";
+import {AddBlogDataType, GetBlogsParamsType} from "../../api/apiTypes.ts";
 import {PostType} from "@redux/reducers/post-reducer.ts";
+import {push} from "redux-first-history";
 
 
 export const getBlogsThunk = createAsyncThunk('blogs/getBlogs', async (_, {dispatch}) => {
@@ -28,6 +29,14 @@ export const getPostsForBlog = createAsyncThunk('blogs/getBlogsForPosts', async 
     console.log(posts)
     dispatch(setPostsForBlogs(posts.data.items))
 })
+export const addBlog = createAsyncThunk('blogs/addBlog', async (data: AddBlogDataType, {dispatch}) => {
+    console.log('aff')
+    const blog = await blogsApi.addBlog(data)
+    console.log(blog.data)
+    dispatch(addNewBlog(blog))
+    dispatch(push('/blogs'))
+})
+
 export type BlogType = {
     createdAt: string
     description: string
@@ -62,6 +71,9 @@ const blogSlice = createSlice({
         },
         setPostsForBlogs: (state, action) => {
             state.posts = action.payload
+        },
+        addNewBlog: (state, action) => {
+    state.blogs.unshift(action.payload)
         }
     }
 })
@@ -70,5 +82,6 @@ export const {
     setBlogs,
     setBlogById,
     setPostsForBlogs,
+    addNewBlog,
 } = blogSlice.actions
 export const blogReducer = blogSlice.reducer

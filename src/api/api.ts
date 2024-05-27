@@ -1,15 +1,29 @@
 import axios from "axios";
-import {GetBlogsParamsType, GetPostsParamsType} from "./apiTypes.ts";
+import {AddBlogDataType, GetBlogsParamsType, GetPostsParamsType} from "./apiTypes.ts";
+import { Buffer } from 'buffer'
 
 
-const baseURL = 'https://821173fd3b21e4a2a24cab54c3ed1efe.serveo.net'
+const baseURL = 'https://0bf12ecfc0048e9a8a7aefc2a6f7e39c.serveo.net'
+
+const user = 'admin';
+const password = 'qwerty';
+
+// create a buffer
+const buff = Buffer.from(user + ':' + password, 'utf-8');
+
+// decode buffer as Base64
+const base64 = buff.toString('base64');
+console.log(base64)
 
 const instance = axios.create({
     baseURL,
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
-    }
+        'authorization': 'Basic' +' '+ 'YWRtaW46cXdlcnR5'
+    },
+
+
 })
 
 export const blogsApi = {
@@ -22,6 +36,10 @@ export const blogsApi = {
     },
     getPostsForBlog: (id: string) => {
         return instance.get(`/blogs/${id}/posts`)
+    },
+    addBlog: (data: AddBlogDataType) => {
+        // const {websiteUrl, name, description} = data
+        return instance.post('/blogs', data)
     }
 }
 

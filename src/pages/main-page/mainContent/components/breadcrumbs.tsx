@@ -10,12 +10,16 @@ export const Breadcrumbs = (props: BreadcrumbsType) => {
     const location = useLocation()
     const pathLocation = location.pathname.split('/').slice(2)
 
-    const paths = pathLocation.map((path) => {
+    const paths = pathLocation.map((path, index) => {
         return (
-            {
-                title: <NavLink to={`${path}`}
-                                className={breadcrumbsStyle.breadcrumb}>{path}</NavLink>
-            }
+            pathLocation.length === index ?
+                {
+                    title: <NavLink to={`/${path}`}
+                                    className={breadcrumbsStyle.breadcrumb}>{path}</NavLink>
+                }
+                : {
+                    title: <div  className={breadcrumbsStyle.breadcrumb}>{path}</div>
+                }
         )
     })
     return (
@@ -25,10 +29,11 @@ export const Breadcrumbs = (props: BreadcrumbsType) => {
                 <path d="M6.33301 11.3333L9.66634 7.99996L6.33301 4.66663V11.3333Z" fill="#797476"/>
             </svg>}
                     className={blogsStyle.title}
-                    items={[  {className: blogsStyle.title,
-                        title: <NavLink to={`${props.title}`}
-                                        >{props.title}</NavLink>
-                    },...paths]}
+                    items={[{
+                        className: breadcrumbsStyle.title,
+                        title: <NavLink to={`/${props.title}`}
+                        >{props.title}</NavLink>
+                    }, ...paths]}
         >
             <Breadcrumb.Item> <NavLink to={`/${props.title.toLowerCase()}`}>{props.title}</NavLink></Breadcrumb.Item>
             {pathLocation.map((path) => {

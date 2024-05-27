@@ -14,3 +14,10 @@ export type GetPostsParamsType = {
     sortBy: string
     sortDirection: 'asc' | 'desc'
 }
+
+export type AddBlogDataType={
+    name: string,
+    description: string,
+    websiteUrl: string
+}
+

@@ -5,12 +5,20 @@
     color: $mainColor;
 }
 .breadcrumb {
-    color: rgba(0,0,0,0.1);
     font-weight: 400;
     font-size: 12px;
     line-height: 133%;
     letter-spacing: 0.2em;
+    //color: rgba(0,0,0,0.3);
     & a{
         color: rgba(0,0,0,0.3);
     }
 }
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    color: $mainColor;
+    padding: 29px 0 7px 0;
+}
+

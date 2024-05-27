@@ -70,3 +70,11 @@ button:focus-visible {
 .ant-breadcrumb a {
     color: rgba(0, 0, 0);
 }
+.ant-breadcrumb ol{
+    align-items: center;
+}
+
+.ant-breadcrumb-separator{
+    display: flex;
+    align-items: center;
+}
