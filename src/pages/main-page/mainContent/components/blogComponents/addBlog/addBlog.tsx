@@ -1,9 +1,8 @@
 import {Breadcrumbs} from "@pages/main-page/mainContent/components/breadcrumbs.tsx";
 import {BackTo} from "@pages/main-page/mainContent/components/backTo.tsx";
 
-import notImg from '../../../../../assets/svg/noIcon.svg'
-import blogStyle from "@pages/main-page/mainContent/blogs/blogId/blog.module.scss";
-import blogsStyle from "@pages/main-page/mainContent/blogs/blogs.module.scss";
+import notImg from '../../../../../../assets/svg/noIcon.svg'
+import blogStyle from "@pages/main-page/mainContent/components/blogComponents/blogId/blog.module.scss";
 
 import Input from "antd/es/input/Input";
 import TextArea from "antd/es/input/TextArea";
@@ -57,7 +56,6 @@ export const AddBlog = () => {
             </div>
             <div className={style.buttonWrapper}>
                 <button
-                    className={blogsStyle.button}
                     onClick={addBlogButton}
                 >
                     Add blog

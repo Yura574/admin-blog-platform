@@ -1,4 +1,4 @@
-import blogsStyle from "@pages/main-page/mainContent/blogs/blogs.module.scss";
+import blogsStyle from "@pages/main-page/mainContent/components/blogComponents/blogs.module.scss";
 import {Breadcrumb} from "antd";
 import {NavLink, useLocation} from "react-router-dom";
 import breadcrumbsStyle from "./breadcrumbs.module.scss"

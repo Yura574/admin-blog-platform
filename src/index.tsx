@@ -9,11 +9,11 @@ import {MainPage} from './pages';
 import 'normalize.css';
 import './index.css';
 import './reset.css';
-import {Blogs} from "@pages/main-page/mainContent/blogs/blogs.tsx";
+import {Blogs} from "@pages/main-page/mainContent/components/blogComponents/blogs.tsx";
 import {Posts} from "@pages/main-page/mainContent/posts/posts.tsx";
 import {PostId} from "@pages/main-page/mainContent/posts/postId/postId.tsx";
-import {BlogId} from "@pages/main-page/mainContent/blogs/blogId/blogId.tsx";
-import {AddBlog} from "@pages/main-page/mainContent/blogs/addBlog/addBlog.tsx";
+import {BlogId} from "@pages/main-page/mainContent/components/blogComponents/blogId/blogId.tsx";
+import {AddBlog} from "@pages/main-page/mainContent/components/blogComponents/addBlog/addBlog.tsx";
 import {HistoryRouter} from "redux-first-history/rr6";
 
 const domNode = document.getElementById('root') as HTMLDivElement;

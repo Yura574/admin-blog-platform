@@ -1,5 +1,5 @@
 import {Select} from "antd";
-import blogCSS from '../blogs/blogs.module.scss'
+import blogCSS from '../components/blogComponents/blogs.module.scss'
 import postStyle from './posts.module.scss'
 import notImg from '../../../../assets/svg/noIcon.svg'
 import {useAppDispatch, useAppSelector} from "@hooks/typed-react-redux-hooks.ts";

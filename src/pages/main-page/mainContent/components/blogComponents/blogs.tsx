@@ -1,13 +1,13 @@
 import blogStyle from './blogs.module.scss'
-import {Button, Dropdown,  Modal, Space} from "antd";
-import noIcon from '../../../../assets/svg/noIcon.svg'
+import {Button, Dropdown, Modal, Space} from "antd";
+import noIcon from '../../../../../assets/svg/noIcon.svg'
 import {useEffect, useState} from "react";
 import {deleteBlogThunk, getBlogsThunk} from "@redux/reducers/blog-reducer.ts";
 import {useAppDispatch, useAppSelector} from "@hooks/typed-react-redux-hooks.ts";
 import {NavLink} from "react-router-dom";
-import moreVert from '../../../../assets/svg/more_vert.svg'
-import deleteSvg from '../../../../assets/svg/delete.svg'
-import editSvg from '../../../../assets/svg/edit.svg'
+import moreVert from '../../../../../assets/svg/more_vert.svg'
+import deleteSvg from '../../../../../assets/svg/delete.svg'
+import editSvg from '../../../../../assets/svg/edit.svg'
 import {MouseEvent} from 'react'
 
 
@@ -26,15 +26,15 @@ export const Blogs = () => {
         dispatch(getBlogsThunk())
     }, [dispatch])
 
-    const openDeleteModal = (blogId: string)=> {
+    const openDeleteModal = (blogId: string) => {
         setIsDeleteModalOpen(true)
         setBlogId(blogId)
     }
-    const closeDeleteModal = ()=> {
+    const closeDeleteModal = () => {
         setBlogId('')
         setIsDeleteModalOpen(false)
     }
-    const deleteBlog = ()=> {
+    const deleteBlog = () => {
         dispatch(deleteBlogThunk(blogId))
         setIsDeleteModalOpen(false)
     }
@@ -57,8 +57,8 @@ export const Blogs = () => {
             {
                 key: '2',
                 label: (
-                    <div className={blogStyle.dropdownWrapper}><img src={editSvg} alt="delete"/>Edit
-                    </div>
+                    <NavLink to={`${blogId}/edit`} className={blogStyle.dropdownWrapper}><img
+                        src={editSvg} alt="delete"/>Edit </NavLink>
                 ),
             },
 
@@ -117,7 +117,9 @@ export const Blogs = () => {
                            <button key={'1'} className={blogStyle.buttonPrimary}
                                    onClick={() => closeDeleteModal()}>No
                            </button>
-                           <button key={'2'} className={blogStyle.buttonSecondary} onClick={deleteBlog}>Yes</button>
+                           <button key={'2'} className={blogStyle.buttonSecondary}
+                                   onClick={deleteBlog}>Yes
+                           </button>
                        </div>
                    }
             >

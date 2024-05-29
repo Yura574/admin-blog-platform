@@ -1,4 +1,4 @@
-import blogCSS from "@pages/main-page/mainContent/blogs/blogs.module.scss";
+import blogCSS from "@pages/main-page/mainContent/components/blogComponents/blogs.module.scss";
 import postStyle from './postId.module.scss'
 import notImg from '../../../../../assets/svg/noIcon.svg'
 import {useAppDispatch, useAppSelector} from "@hooks/typed-react-redux-hooks.ts";

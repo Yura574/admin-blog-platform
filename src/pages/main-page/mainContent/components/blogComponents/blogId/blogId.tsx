@@ -1,6 +1,6 @@
-import blogsStyle from "@pages/main-page/mainContent/blogs/blogs.module.scss";
+import blogsStyle from "@pages/main-page/mainContent/components/blogComponents/blogs.module.scss";
 import { useParams} from "react-router-dom";
-import notImg from '../../../../../assets/svg/noIcon.svg'
+import notImg from '../../../../../../assets/svg/noIcon.svg'
 import blogStyle from './blog.module.scss'
 import {Button} from "antd";
 import {PostsForBlogs} from "@pages/main-page/mainContent/posts/postsForBlog/postsForBlogs.tsx";

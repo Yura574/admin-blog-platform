@@ -3,7 +3,7 @@ import {AddBlogDataType, GetBlogsParamsType, GetPostsParamsType} from "./apiType
 import { Buffer } from 'buffer'
 
 
-const baseURL = 'https://2e1d103e065b08d1a33aad7bcf75b66d.serveo.net'
+const baseURL = 'https://06e2537d9502458287e49a5db04c03f4.serveo.net'
 
 const user = 'admin';
 const password = 'qwerty';
